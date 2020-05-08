@@ -18,5 +18,8 @@
     "nuxt": "^2.0.0",
     "xmlhttprequest": "^1.8.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2"
+  }
 }
