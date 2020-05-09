@@ -3,8 +3,14 @@
         <div>
             <h4>{{name}}</h4>
         </div>
-        <div>
+        <div class="d-flex justify-content-between flex-row-reverse">
+            <span class="text-primary">{{role}}</span>
             <span>nationality : {{nationality}}</span>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between flex-row-reverse">
+            <span class="text-primary">{{position}}</span>
+            <span>country Birth :{{countryOfBirth}}</span>
         </div>
     </div>
 </template>
@@ -20,7 +26,16 @@
           },
           nationality(){
             return this.squad.nationality
-          }
+          },
+          countryOfBirth(){
+            return this.squad.countryOfBirth
+          },
+          role(){
+            return this.squad.role
+          },
+          position(){
+            return this.squad.position
+          },
         },
     }
 </script>

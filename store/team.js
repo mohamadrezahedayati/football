@@ -26,7 +26,6 @@ export const actions = {
         })
     },
     getTeam({commit},id){
-        console.log(id)
         return matchService.getTeam(id).then(response => {
             commit('SET_TEAM',response.data)
         }).catch(error =>{

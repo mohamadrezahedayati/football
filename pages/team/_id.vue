@@ -1,6 +1,6 @@
 <template>
   <div class="container-page-team">
-    <div class="team-info d-flex align-items-center">
+    <div class="team-info d-flex align-items-center"  :style="teamColors">
       <div class="logo-team" style="width:200px">
         <img :src="teamLogo" style="width:100%" alt="">
       </div>
@@ -11,11 +11,30 @@
         <div class="details-team">
           <span> Official Website : <a :href="teamWebsite" target="_blank">{{teamWebsite}}</a></span>
         </div>
+        <div class="details-team">
+          <span> phone : {{phone}}</span>
+        </div>
+        <div class="details-team">
+          <span> email : {{email}}</span>
+        </div>
       </div>
     </div>
     <hr>
     <div>
-      <div class="title-squad d-flex justify-content-center" :style="teamColors">
+      <div class="title-squad d-flex justify-content-center">
+        <h2>active competitions</h2>
+      </div>
+      <div class="container-squads container-fluid px-1">
+        <b-list-group>
+          <b-list-group-item v-for="competition in team.activeCompetitions" :key="competition.id">
+            <span class="competition-name">{{competition.name}} |</span> <span>{{competition.area.name}}</span>
+          </b-list-group-item>
+        </b-list-group>
+      </div>
+    </div>
+    <hr>
+    <div>
+      <div class="title-squad d-flex justify-content-center">
         <h2>squad</h2>
       </div>
       <div class="container-squads container-fluid px-1">
@@ -53,8 +72,13 @@ import Squad from '@/components/squad.vue'
       },
       teamColors(){
         var colors = this.team.clubColors.split(" /")
-        console.log(colors[0])
-        return `background-image: linear-gradient(45deg,${colors[0]}, ${colors[1]});`
+        return `background-image: linear-gradient(45deg,${colors[1]}, ${colors[0]});`
+      },
+      phone(){
+        return this.team.phone
+      },
+      email(){
+        return this.team.email
       }
     },
     async fetch({store,error,params}) {
@@ -71,7 +95,7 @@ import Squad from '@/components/squad.vue'
 </script>
 
 <style lang="scss" scoped>
-.container-squads{
-
+.competition-name{
+  
 }
 </style>
