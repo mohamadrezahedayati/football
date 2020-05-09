@@ -1,6 +1,6 @@
 <template lang="html">
-    <div class="container-loader">
-        <div class="loader" v-if="loading">
+    <div class="container-loader" v-if="loading">
+        <div class="loader">
             <div></div>
             <div></div>
             <div></div>
@@ -52,8 +52,15 @@ $lg: new-breakpoint(min-width 1024px);
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
     width: 100%;
     height: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #091251bf;
+    z-index: 99;
 }
 
 .loader {

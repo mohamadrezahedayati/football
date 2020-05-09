@@ -16,5 +16,8 @@ export default {
     },
     getMatchsToday(){
         return apiClinet.get('matches')
+    },
+    getTeam(teamID){
+        return apiClinet.get(`teams/${teamID}`)
     }
 }

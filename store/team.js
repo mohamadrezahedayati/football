@@ -4,13 +4,17 @@ import Vue from 'vue'
 export const namespaced = true
 
 export const state = () => ({
-    teams:[]
+    teams:[],
+    team:''
 })
 
 export const mutations = {
     SET_TEAMS(state,data){
         Vue.set(state,'teams',data)
-    }
+    },
+    SET_TEAM(state,data){
+        Vue.set(state,'team',data)
+    },
 }
 
 export const actions = {
@@ -21,4 +25,12 @@ export const actions = {
             console.log(error)
         })
     },
+    getTeam({commit},id){
+        console.log(id)
+        return matchService.getTeam(id).then(response => {
+            commit('SET_TEAM',response.data)
+        }).catch(error =>{
+            console.log(error)
+        })
+    }
 }
