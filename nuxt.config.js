@@ -28,12 +28,25 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/pagination.client.js'
   ],
   /*
   ** Nuxt.js dev-modules
   */
   buildModules: [
   ],
+  pwa: {
+    manifest: {
+      name: "HackerWeb",
+      "short_name": "HackerWeb",
+      "start_url": ".",
+      "display": "standalone",
+      "background_color": "#fff",
+      "description": "A simply readable Hacker News app.",
+      lang: 'fa',
+      useWebmanifestExtension: false
+    }
+  },
   /*
   ** Nuxt.js modules
   */

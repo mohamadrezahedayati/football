@@ -1,7 +1,7 @@
 <template>
     <div>
         <b-row>
-            <b-col cols="4" v-for="team in teams" :key="team.id" >
+            <b-col cols="12" sm="6" md="4" lg="4" xl="4" v-for="team in teams" :key="team.id" >
                 <CardTeam :team="team"></CardTeam>
             </b-col>
         </b-row>

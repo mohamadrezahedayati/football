@@ -39,7 +39,7 @@
       </div>
       <div class="container-squads container-fluid px-1">
         <b-row>
-            <b-col cols="4" v-for="squad in team.squad" :key="squad.id" class="px-1">
+            <b-col cols="12" sm="6" md="4" lg="4" xl="4" v-for="squad in team.squad" :key="squad.id" class="px-1">
                 <Squad :squad="squad"></Squad>
             </b-col>
         </b-row>
