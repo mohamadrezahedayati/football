@@ -39,13 +39,17 @@ export default {
     manifest: {
       name: "HackerWeb",
       "short_name": "HackerWeb",
-      "start_url": ".",
+      "start_url": "/",
       "display": "standalone",
-      "background_color": "#fff",
+      "background_color": "red",
       "description": "A simply readable Hacker News app.",
       lang: 'fa',
       useWebmanifestExtension: false
-    }
+    },
+    icon: {
+      iconSrc:'/static/team-co.png',
+      iconFileName:'team-co.png'
+    },
   },
   /*
   ** Nuxt.js modules
